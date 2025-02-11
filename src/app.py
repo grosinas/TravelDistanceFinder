@@ -3,16 +3,15 @@ from distanceCalculator import DistanceCalculator
 import sys
 
 # Check if the user has provided the correct number of arguments
-if len(sys.argv) != 4:
-    print("Usage: python app.py <webpage> <output_filename> <label>")
+if len(sys.argv) != 3:
+    print("Usage: python app.py <webpage> <output_filename>")
     sys.exit(1)
     
 address = sys.argv[1]
 address_filename = sys.argv[2]
-label = sys.argv[3]
 
 # Scrape the divs with the given class name from the webpage
-scraper = ItemScraper(address, address_filename, label)
+scraper = ItemScraper(address, address_filename, "address")
 scraper.save_items()
 
 # Request the address, output file and transport mode from the user
